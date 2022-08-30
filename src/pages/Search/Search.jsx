@@ -3,6 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import styles from './../Home/Home.module.css'
 import { fetchMoviesBySearch } from '../../api/themoviedb';
 import { Header } from '../../components/Header';
+import { URL_PREFIX } from '../../components/App';
 
 export const Search = () => {
   const [searchParams] = useSearchParams();
@@ -23,7 +24,7 @@ export const Search = () => {
   }, [searchParams])
 
   function makeUrl(movieId) {
-    return `/movie/${movieId}`;
+    return URL_PREFIX + `/movie/${movieId}`;
   }
 
   return (
