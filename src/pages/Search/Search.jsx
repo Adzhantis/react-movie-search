@@ -20,7 +20,7 @@ export const Search = () => {
     }
     console.log(searchParams);
 
-  }, [])
+  }, [searchParams])
 
   function makeUrl(movieId) {
     return `/movie/${movieId}`;
