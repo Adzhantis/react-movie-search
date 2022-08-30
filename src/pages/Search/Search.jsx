@@ -18,7 +18,7 @@ export const Search = () => {
         setMovies(movies)
       })
     }
-    console.log(query);
+    console.log(searchParams);
 
   }, [])
 
