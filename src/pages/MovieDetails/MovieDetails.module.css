@@ -6,10 +6,6 @@
   margin-left: 30px;
 }
 
-.header {
-  display: flex;
-  flex-flow: row;
-  height: 50px;
-  box-shadow: 0 2px #888888;
+.additionalLinks a {
+  margin: 15px;
 }
-

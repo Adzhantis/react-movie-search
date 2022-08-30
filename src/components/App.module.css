@@ -1,4 +1,10 @@
 .header {
   display: flex;
   flex-flow: row;
+  height: 50px;
+  box-shadow: 0 2px #888888;
+}
+
+.header a {
+  margin: 15px;
 }

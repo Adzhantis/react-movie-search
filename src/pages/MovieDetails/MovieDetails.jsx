@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, Outlet, useParams } from 'react-router-dom';
 import styles from './MovieDetails.module.css'
-import { fetchMovie } from '../../api/themoviedb';
-
-const IMG_PREFIX = 'https://image.tmdb.org/t/p/w200'
+import { fetchMovie, IMG_PREFIX } from '../../api/themoviedb';
+import { Header } from '../../components/Header';
 
 export const MovieDetails = () => {
 
@@ -15,15 +14,15 @@ export const MovieDetails = () => {
       console.log(data);
       setMovie(data)
     })
-  }, [])
+  }, [movieId])
+
+  if (movie.poster_path === undefined) {
+    return <>Still loading...</>;
+  }
 
   return (
     <div>
-      <nav className={styles.header}>
-        <Link to="/">Home</Link>
-        <Link to="/movies">Movies</Link>
-      </nav>
-
+      <Header />
       <div>
         <Link to="/">Go back</Link>
       </div>
@@ -42,11 +41,13 @@ export const MovieDetails = () => {
       </div>
 
       <hr />
-      <nav className={styles.header}>
-        <Link to="/">Cast</Link>
-        <Link to="/movies">Reviews</Link>
+      <nav className={styles.additionalLinks}>
+        <Link to="cast">Cast</Link>
+        <Link to="reviews">Reviews</Link>
       </nav>
       <hr />
+
+      <Outlet />
 
     </div>
   );
