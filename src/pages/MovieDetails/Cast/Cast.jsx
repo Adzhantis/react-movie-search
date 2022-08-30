@@ -28,6 +28,7 @@ export const Cast = () => {
             <p>Character: {character}</p>
           </li>
         }
+        return ''
       })}
     </ul>
   );
