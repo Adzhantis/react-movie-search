@@ -22,3 +22,7 @@ export async function fetchMovieCast(movieId) {
 export async function fetchMovieReviews(movieId) {
   return await axios.get(`/movie/${movieId}/reviews?api_key=${KEY}`);
 }
+
+export async function fetchMoviesBySearch(query) {
+  return await axios.get(`/search/movie?api_key=${KEY}&query=${query}`);
+}
